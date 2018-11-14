@@ -27,6 +27,7 @@
 		3FC932C9219427BB00282319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FC932C8219427BB00282319 /* Assets.xcassets */; };
 		3FC932CC219427BB00282319 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC932CA219427BB00282319 /* LaunchScreen.storyboard */; };
 		3FC932D421942B8900282319 /* DSDPickerview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC932D321942B8900282319 /* DSDPickerview.swift */; };
+		C88BEB1A219C1A27008D7CB9 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88BEB19219C1A27008D7CB9 /* GameEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		3FC932CB219427BB00282319 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FC932CD219427BB00282319 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FC932D321942B8900282319 /* DSDPickerview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSDPickerview.swift; sourceTree = "<group>"; };
+		C88BEB19219C1A27008D7CB9 /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				3FC932CD219427BB00282319 /* Info.plist */,
 				3FC932C5219427A600282319 /* Opdracht5_Galgje.xcdatamodeld */,
 				3FC932D321942B8900282319 /* DSDPickerview.swift */,
+				C88BEB19219C1A27008D7CB9 /* GameEngine.swift */,
 			);
 			path = "Opdracht5-Galgje";
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C88BEB1A219C1A27008D7CB9 /* GameEngine.swift in Sources */,
 				3FC932C1219427A500282319 /* ViewController.swift in Sources */,
 				3FC932BF219427A500282319 /* AppDelegate.swift in Sources */,
 				3FC932D421942B8900282319 /* DSDPickerview.swift in Sources */,
