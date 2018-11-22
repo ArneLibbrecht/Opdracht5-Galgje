@@ -9,7 +9,7 @@
 import Foundation
 class GameEngine{
     private var word:String;
-    private var guessedLetters:[Int:Character]
+    private var guessedLetters:[Int:Character?]
     init()
     {
         word=""
@@ -18,22 +18,26 @@ class GameEngine{
     
     
     func setWord(word:String)->Bool{
-      if(word.count>6 || word.count<1){
+        if(word.count>6 || word.count<1 || word.range(of:"([a-zA-Z])+$", options: .regularExpression) == nil){
         return false
         }
       else{
         self.word=word
+            for l in 0..<self.word.count{
+               guessedLetters.updateValue(nil, forKey: l)
+            }
         return true
         }
     }
     
-    func guessLetter(letter:String)->(hasLetter:Bool,guessedLetters:[Int:Character ]?)    {
-        let hasLetter=word.contains(letter)
-        let charLetter:Character=letter[letter.startIndex]
+    func guessLetter(letter:Character)->(hasLetter:Bool,guessedLetters:[Int:Character?]?)    {
+        let hasLetter=word.range(of: String(letter)) != nil
+        
         if(hasLetter){
             for l in 0..<self.word.count {
-                if(guessedLetters[l]==nil && self.word[word.index(word.startIndex,offsetBy: l)]==charLetter){
-                    guessedLetters.updateValue(charLetter, forKey: l)
+
+                if(guessedLetters[l]!==nil && self.word[word.index(word.startIndex,offsetBy: l)]==letter){
+                    guessedLetters.updateValue(letter, forKey: l)
                 }
             }
         }

@@ -21,19 +21,29 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     @IBAction func playTapped(_ sender: Any) {
-        var result:(Bool,[Int:Character]?) = gameEngine.guessLetter(letter:alphabet[alphabet.index(alphabet.startIndex,offsetBy:chosenLettersPicker.selectedRow(inComponent: 0).distance(to: 0))])
+        if(letterPicker.selectedRow(inComponent: 0) != 0){
+        let index=alphabet.index(alphabet.startIndex,offsetBy:letterPicker.selectedRow(inComponent: 0)-1)
+        let result:(Bool,[Int:Character?]?) = gameEngine.guessLetter(letter:alphabet[index])
         
         if(result.0){
             if(result.1 != nil){
             guessed(letters: result.1!)
             }
         }
+        }
     }
     
-    private func guessed(letters:[Int:Character]){
-        for l in letters.keys{
+    private func guessed(letters:[Int:Character?]){
+        var s:String=""
+            for l in 0..<letters.count {
+                if(letters[l]! == nil){
+                    s.append("_")
+                }
+                else{
+                    chosenLettersPicker.selectRow((alphabet.firstIndex(of: letters[l]!!)?.encodedOffset)! + 1, inComponent: l, animated: true)
+                    s.append(letters[l]!!)
+                }
             
-            chosenLettersPicker.selectRow((alphabet.firstIndex(of: letters[l]!)?.encodedOffset)!, inComponent: l, animated: true)
         }
     }
     
